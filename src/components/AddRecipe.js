@@ -4,86 +4,72 @@ import '../App.css'
 import NavigationBar from './NavigationBar'
 import addRecipe from '../actions/addRecipe'
 import {connect} from 'react-redux';
-import ViewAll from './ViewAll'
-
 
 class AddRecipe extends React.Component {
     constructor(props, context) {
         super(props, context);    
         this.state = {
-           
             recipeName: '',
             recipeIngredients: '',
             recipeInstructions: '',
-            recipiPic: ''
-            
+            recipePic: ""
         };
+        this.history = props.history;
         
     }
 
     handleRecipeName(e){
         e.preventDefault();
-
-        
-
         this.setState({recipeName: e.target.value});
-
     }
 
     handleRecipeIngredients(e){
         e.preventDefault();
-
-        
-
         this.setState({recipeIngredients: e.target.value});
-
     }
 
     handleRecipeInstructions(e){
         e.preventDefault();
-
-        
-
         this.setState({recipeInstructions: e.target.value});
-
     }
 
-    // handleSubmit(e){
-    //     e.preventDefault();
+    handleRecipePic(e){
+        e.preventDefault();
+        this.setState({recipePic: e.target.value});
+    }
 
-    //     this.setState({
-    //         recipe: {
-    //             recipeName: this.state.recipe.recipeName,
-    //             recipeIngredients: this.state.recipe.recipeIngredients,
-    //             recipeInstructions: this.state.recipe.recipeInstructions,
-    //             recipiPic: this.state.recipe.recipiPic,
-    //         }
-    //     }, function(){
-    //         console.log('form submitted ' + this.state.recipe.recipeName, this.state.recipe.recipeIngredients,
-    //         this.state.recipe.recipeInstructions,
-    //         this.state.recipe.recipiPic);
+    handleSubmit(e){
+        e.preventDefault();
 
-    //         // let tempRecipe = this.state.allRecipes;
-    //         // tempRecipe.push(this.state.newRecipe);
+        this.props.onAddRecipe({
+            recipePic: this.state.recipePic,
+            recipeName: this.state.recipeName,
+            recipeIngredients: this.state.recipeIngredients,
+            recipeInstructions: this.state.recipeInstructions,
+        });
 
-    //         //this.setState({allRecipes: tempRecipe});
-    //     })
-    // }
+        this.history.push('/ViewAll')
+    }
 
     render() {
         let recipeList = this.props.recipeList.map(recipe =>{
 
-            return <p key={recipe.recipeName}>{recipe.recipeIngredients} {recipe.recipeInstructions}</p>
+            return <p key={recipe.recipeName}>{recipe.recipeName} {recipe.recipeIngredients} {recipe.recipeInstructions} {recipe.recipePic}</p>
         })
 
         return (
             <div>
                 <NavigationBar />
                 
-                <form >
+                <form onSubmit={this.handleSubmit.bind(this)}>
                     <FormGroup controlId="formControlsName">
                         <ControlLabel>Name of Recipe</ControlLabel>
                         <FormControl type="text" placeholder="Name" onChange={this.handleRecipeName.bind(this)} />
+                    </FormGroup>
+                    <FormGroup controlId="formControlsName">
+                    
+                        <ControlLabel>URL of picture</ControlLabel>
+                        <FormControl type="text" placeholder="URL" onChange={this.handleRecipePic.bind(this)} value={this.state.recipePic}/>
                     </FormGroup>
                     <FormGroup controlId="formControlsTextarea">
                         <ControlLabel>Ingredients</ControlLabel>
@@ -93,14 +79,18 @@ class AddRecipe extends React.Component {
                         <ControlLabel>Instructions</ControlLabel>
                         <FormControl componentClass="textarea" placeholder="Instructions" onChange={this.handleRecipeInstructions.bind(this)} />
                     </FormGroup>
-                    <button onClick={() =>  this.props.onAddRecipe({
+                    {/* <button onClick={() =>  this.props.onAddRecipe({
+                        recipePic: this.state.recipePic,
                         recipeName: this.state.recipeName,
                         recipeIngredients: this.state.recipeIngredients,
                         recipeInstructions: this.state.recipeInstructions,
-                        recipiPic: this.state.recipiPic
-                    })}>Save</button>
+                    })}>Save</button> */}
+
+                    <button>Submit</button>
+
+
+                    
                 </form>
-                {recipeList}
         </div>
         )};
 }

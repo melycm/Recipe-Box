@@ -6,7 +6,7 @@ function addRecipe(item){
             recipeName: item.recipeName,
             recipeIngredients: item.recipeIngredients,
             recipeInstructions: item.recipeInstructions,
-            recipiPic: item.recipiPic
+            recipePic: item.recipePic
         }
     }
 }

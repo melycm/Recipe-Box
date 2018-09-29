@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:700|Roboto:500);
+
 .App {
   text-align: center;
 }
@@ -9,6 +11,47 @@
 
 #formControlsName {
   width: 50%;
+}
+
+.imagefront{
+  background-image: url('http://i.huffpost.com/gen/4819732/images/o-KITCHEN-COOKING-facebook.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.mainBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(92, 92, 92); /* Fallback for older browsers without RGBA-support */
+  background: rgba(110, 110, 110, 0.5);
+  padding: 80px 70px 60px;
+  box-sizing: content-box;
+  width: 40%;
+}
+
+Link {
+  color: #001f3f;
+}
+
+.quote {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 22px;
+  text-align: center;
+  text-shadow: 1px 1px black;
+}
+
+footer{
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+Navbar {
+  background-color: rgba(255,255,255,0.5);
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
