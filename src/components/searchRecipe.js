@@ -1,7 +1,5 @@
 import React from 'react';
-import NavigationBar from './NavigationBar'
-// import searchYouTube from 'youtube-api-search';
-// import YTSearch from 'youtube-api-search'   
+import NavigationBar from './NavigationBar'  
 import axios from 'axios'
 import AddSecondRecipe from './AddSecondRecipe'
 
@@ -32,24 +30,14 @@ class searchRecipe extends React.Component {
             }
         })
         .then(response => {
-            console.log(response)
+            var myArrayId = []
+            for(let i=0; i< 20; i++){
+                myArrayId.push(response.data.items[i].id.videoId)
 
-            // this.setState({ videos: response.items, loading: false });
-
-            // this.setState({ items: response });
-
-            // const listVideos = this.props.data.items[0].id.videoId.map(movies => {
-
-            // })
-
-
-            // const videos = this.props.recipeData.items.id.map(newRecipe => {
-            //     return newRecipe.videoId
-
-            //     console.log(newRecipe.videoId)
-            // })
-            // this.setState({ videos });
-          });
+            }
+            console.log(myArrayId)
+            this.setState({videos: myArrayId})
+          })
     }
 
     onInputChange(e) {
@@ -58,24 +46,12 @@ class searchRecipe extends React.Component {
 
     render() {
 
-        // const { loading, videos } = this.state;
+        const myVideos = this.state.videos.map((item) => {
+            return(
+                <iframe width="350" height="250" src={"https://www.youtube.com/embed/" + item} frameBorder="0" allowFullScreen></iframe>
+            );
+        })  
 
-        // if (loading) {
-        //   return null;
-        // }
-
-        // if (!this.state.items || this.state.items.length === 0) {
-        //     return null; // or <div></div>, or a loader, or whatever you want in the meantime
-        // }
-
-        // const myVideos = this.state.items.map((item) => {
-        //     return(
-        //       <div>
-        //         <iframe width="560" height="315" src={'https://www.youtube.com/embed/' + item.snippet.resourceId.videoId} frameborder="0" allowfullscreen></iframe>
-        //         {console.log('https://www.youtube.com/embed/' + item.snippet.resourceId.videoId)}
-        //       </div>
-        //     );
-        // })  
     
         return (
             <div>
@@ -92,9 +68,30 @@ class searchRecipe extends React.Component {
                 
                 Search Recipe
                 </button>
-                {/* {myVideos} */}
-
-                {/* <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + videos[1].id.videoId} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> */}
+                <br />
+                <div>
+                    {myVideos[0]}
+                    <br />
+                    {myVideos[1]}
+                    <br />
+                    {myVideos[2]}
+                    <br />
+                    {myVideos[3]}
+                    <br />
+                    {myVideos[4]}
+                    <br />
+                    {myVideos[5]}
+                    <br />
+                    {myVideos[6]}
+                    <br />
+                    {myVideos[7]}
+                    <br />
+                    {myVideos[8]}
+                    <br />
+                    {myVideos[9]}
+                    <br />
+                    {myVideos[10]}
+                </div>
                 <AddSecondRecipe />
             </div>
         );
