@@ -1,6 +1,7 @@
 function recipeReducer(state, action) {
     if (state === undefined) {
         return { 
+            apiInfo: [],
             recipeList: [
                 {
                     recipeName: "Beef Tacos",
@@ -49,9 +50,17 @@ function recipeReducer(state, action) {
                 ...state,
                 recipeList: updatedArray
             }
-        default:
-            return (state)
+
+        case 'apiFetchData':
+        {
+            return {
+                ... state,
+                apiInfo: action.payload
+            }
         }
+        default:
+            return state;
+    }
 }
 
 export default recipeReducer;

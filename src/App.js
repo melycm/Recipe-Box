@@ -5,8 +5,7 @@ import NavigationBar from './components/NavigationBar'
 import addRecipe from './actions/addRecipe'
 import FooterBar from './components/FooterBar'
 import './App.css'
-import { SocialIcon } from 'react-social-icons';
-
+import apiData from './actions/apiData'
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class App extends React.Component {
           {/* <div className="mainBox">
               <h1 className="quote">"No one is born a great cook, one learns by doing."</h1>
           </div> */}
-          <SocialIcon style={{float: 'right', color: 'black'}} network="github" url="#" />
+          <a style={{fontSize: '50px', float: 'right', color: 'rgba(110, 110, 110, 0.5)'}} href="#" class="fa fa-github"></a>
         </div>
       </div>
         {/* <FooterBar /> */}
@@ -43,6 +42,7 @@ function mapDispatchToProps(dispatch){
 
   return{
     onAddRecipe: (recipeData) => dispatch(addRecipe(recipeData)),
+    onFetch: (response) => dispatch(apiData(response))
   }
 }
 

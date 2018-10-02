@@ -17,8 +17,7 @@ var store = createStore(recipeReducer,
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
-            
+        <BrowserRouter>  
             <switch>
                 <Route exact path="/" component={App} />
                 <Route exact path="/AddRecipe" component={AddRecipe} />
