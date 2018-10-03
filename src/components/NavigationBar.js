@@ -12,26 +12,28 @@ class NavigationBar extends React.Component {
     render() {
         return (
             <div>
-                <Navbar style={{backgroundColor: 'rgba(110, 110, 110, 0.5)', borderBottom: '#737373 1px solid', boxShadow: '0 7px 5px -6px #999', borderRadius: '0px', borderTop: 'none', borderLeft: 'none', borderRight: 'none'}} >
+                <Navbar style={{fontSize: '15px', backgroundColor: 'transparent', borderRadius: '0px', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderBottom: 'none', textShadow: '2px 2px black', display: 'flex', justifyContent: 'center', marginLeft: '20%'}} >
                     <Navbar.Header>
                         <Navbar.Brand>
-                            Recipes
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
                     <Navbar.Collapse>
                         <Nav>
-                        <NavItem eventKey={1}>
-                            <Link to="/" style={{color: '#001f3f'}}><b>Home</b></Link>
+                        <NavItem style={{marginTop: '2%'}} eventKey={1}>
+                            <Link to="/" style={{color: 'white'}}><b>HOME</b></Link>
                         </NavItem>
-                        <NavItem eventKey={2}>
-                            <Link style={{color: '#001f3f'}} to="/AddRecipe"><b>Add Recipe</b></Link>
+                        <NavItem style={{marginTop: '2%'}} eventKey={2}>
+                            <Link style={{color: 'white'}} to="/AddRecipe"><b>ADD RECIPE</b></Link>
                         </NavItem>
-                        <NavItem eventKey={3}>
-                            <Link style={{color: '#001f3f'}} to="/searchRecipe"><b>Search Recipe</b></Link>
+                        <NavItem>
+                            <img src="http://i65.tinypic.com/wiovat.png" width="240px" />
                         </NavItem>
-                        <NavItem eventKey={4}>
-                            <Link style={{color: '#001f3f'}} to="/ViewAll"><b>View All</b></Link>
+                        <NavItem style={{marginTop: '2%'}} eventKey={3}>
+                            <Link style={{color: 'white'}} to="/searchRecipe"><b>SEARCH RECIPE</b></Link>
+                        </NavItem>
+                        <NavItem style={{marginTop: '2%'}} eventKey={4}>
+                            <Link style={{color: 'white'}} to="/ViewAll"><b>VIEW ALL</b></Link>
                         </NavItem>
                         </Nav>
                     </Navbar.Collapse>

@@ -6,6 +6,7 @@ import addRecipe from './actions/addRecipe'
 import FooterBar from './components/FooterBar'
 import './App.css'
 import apiData from './actions/apiData'
+import deleteRecipe from './actions/deleteRecipe'
 
 class App extends React.Component {
   constructor(props) {
@@ -22,10 +23,13 @@ class App extends React.Component {
           {/* <div className="mainBox">
               <h1 className="quote">"No one is born a great cook, one learns by doing."</h1>
           </div> */}
-          <a style={{fontSize: '50px', float: 'right', color: 'rgba(110, 110, 110, 0.5)'}} href="#" class="fa fa-github"></a>
+          <div style={{float: 'right', width: '0px'}}>
+            <a style={{fontSize: '30px', float: 'right', color: 'white'}} href="www.github.com/melycm" target="_blank" class="fa fa-github"></a><br />
+            <a style={{fontSize: '30px', float: 'right', color: 'white'}} href="www.github.com/melycm" target="_blank" class="fa fa-linkedin"></a><br />
+            <a style={{writingMode: 'vertical-rl', color: 'white', fontSize: '20px'}} href="www.melissacantu.com" target="_blank">www.melissacantu.com</a>
+          </div>
         </div>
       </div>
-        {/* <FooterBar /> */}
       </div>
     );
   }
@@ -42,7 +46,8 @@ function mapDispatchToProps(dispatch){
 
   return{
     onAddRecipe: (recipeData) => dispatch(addRecipe(recipeData)),
-    onFetch: (response) => dispatch(apiData(response))
+    onFetch: (response) => dispatch(apiData(response)),
+    onDeleteRecipe: (recipeData) => dispatch(deleteRecipe(recipeData))
   }
 }
 

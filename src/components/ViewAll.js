@@ -3,6 +3,7 @@ import NavigationBar from './NavigationBar';
 import {connect} from 'react-redux';
 import addRecipe from '../actions/addRecipe'
 import {Grid, Button, Row, Col, Thumbnail, Modal, ButtonToolbar} from 'react-bootstrap';
+import deleteRecipe from '../actions/deleteRecipe'
 
 
 class ViewAll extends React.Component {
@@ -11,7 +12,7 @@ class ViewAll extends React.Component {
         this.handleShow = this.handleShow.bind(this);
         this.handleHide = this.handleHide.bind(this);
         this.state = {
-            show: false
+            show: false,
         }
     }
 
@@ -62,7 +63,7 @@ class ViewAll extends React.Component {
                         </Modal.Footer>
                         </Modal>
                         </ButtonToolbar>
-                            <Button bsStyle="default" onClick={this.handleHide}>Delete Recipe</Button>
+                            <Button bsStyle="default" onClick={() => {this.props.onDeleteRecipe(recipeData)}}>Delete Recipe</Button>
                     </Thumbnail>
                     </Col>
                     
@@ -101,4 +102,11 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, null)(ViewAll);
+function mapDispatchToProps(dispatch){
+
+    return{
+      onDeleteRecipe: (recipeData) => dispatch(deleteRecipe(recipeData))
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ViewAll);

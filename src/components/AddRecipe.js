@@ -54,7 +54,7 @@ class AddRecipe extends React.Component {
     render() {
         let recipeList = this.props.recipeList.map(recipe =>{
 
-            return <p key={recipe.recipeName}>{recipe.recipeName} {recipe.recipeIngredients} {recipe.recipeInstructions} {recipe.recipePic}</p>
+            return <p key={recipe.recipeName}>{recipe.recipeName}<br /> <li>{recipe.recipeIngredients}</li><br /> {recipe.recipeInstructions}<br /> {recipe.recipePic}</p>
         })
 
         return (

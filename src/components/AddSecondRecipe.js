@@ -68,10 +68,11 @@ class AddSecondRecipe extends React.Component {
     })
         return (
           <ButtonToolbar>
-            <Button style={{float: 'right', bottom: '0', borderRadius: '100px'}} bsStyle="primary" onClick={this.handleShow}>
+            <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+            <Button style={{borderRadius: '100px'}} bsStyle="primary" onClick={this.handleShow}>
               Write Recipe
             </Button>
-    
+            </div>
             <Modal
               {...this.props}
               show={this.state.show}
