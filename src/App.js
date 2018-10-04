@@ -28,6 +28,9 @@ class App extends React.Component {
             {/* <div style={{float: 'right', marginTop: '30px', marginLeft: '128px'}}> */}
             <a style={{writingMode: 'vertical-rl', color: 'white', fontSize: '20px'}} href="www.melissacantu.com" target="_blank">www.melissacantu.com</a>
         </div>
+        <div style={{position: 'absolute', backgroundColor: 'rgba(110, 110, 110, 0.5)', color: 'white', width: '30%', marginTop: '-200px', textAlign: 'center'}} >
+          Melissa Pagina
+        </div>
         {/* <div className="container h-100"> */}
         {/* <div className="row h-100 justify-content-center align-items-center"> */}
           {/* <div className="mainBox">

@@ -123,3 +123,20 @@ form{
   display: inline-block;
 
 }
+
+@media only screen and (max-width: 600px){
+  .navbar-toggle{
+    margin-left: -60px;
+    margin-top: 10px;
+  }
+
+  #formControlsTextarea{
+    padding-bottom: 80px;
+    width: 250px;
+  }
+  
+  #formControlsName {
+    width: 250px;
+  }
+
+}

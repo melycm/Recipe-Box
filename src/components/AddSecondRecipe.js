@@ -84,7 +84,7 @@ class AddSecondRecipe extends React.Component {
               <Modal.Body>
                 <h4 style={{textAlign: 'center'}}>Write the recipe</h4>
                 <div>
-                <form style={{backgroundColor: 'white'}} onSubmit={this.handleSubmit.bind(this)}>
+                <form style={{backgroundColor: 'white', width: '100%'}} onSubmit={this.handleSubmit.bind(this)}>
                     <FormGroup controlId="formControlsName">
                         <ControlLabel>Name of Recipe</ControlLabel>
                         <FormControl style={{width: '100%'}} type="text" placeholder="Name" onChange={this.handleRecipeName.bind(this)} />

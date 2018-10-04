@@ -54,7 +54,7 @@ class ViewAll extends React.Component {
                     {/* <Col md={1}></Col> */}
                     <div>
                     {/* <Row> */}
-                    <Col xs={6} md={3}>
+                    <Col xs={12} md={3}>
                     <Thumbnail src={recipeData.recipePic} alt="242x200">
                         <h3 style={{textAlign: 'center'}}>{recipeData.recipeName}</h3>
                         <ButtonToolbar >
