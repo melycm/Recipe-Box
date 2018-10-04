@@ -58,25 +58,27 @@ class AddRecipe extends React.Component {
         })
 
         return (
-            <div>
+            <div className="imagePages">
                 <NavigationBar />
-                
+                <div className="formBack">
+                <h3 style={{color: 'white'}}>"No one is born a great cook, one learns by doing"</h3>
+                <br />
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <FormGroup controlId="formControlsName">
-                        <ControlLabel>Name of Recipe</ControlLabel>
+                        <ControlLabel style={{color: 'white'}}>Name of Recipe</ControlLabel>
                         <FormControl type="text" placeholder="Name" onChange={this.handleRecipeName.bind(this)} />
                     </FormGroup>
                     <FormGroup controlId="formControlsName">
                     
-                        <ControlLabel>URL of picture</ControlLabel>
+                        <ControlLabel style={{color: 'white'}}>URL of picture</ControlLabel>
                         <FormControl type="text" placeholder="URL" onChange={this.handleRecipePic.bind(this)} value={this.state.recipePic}/>
                     </FormGroup>
                     <FormGroup controlId="formControlsTextarea">
-                        <ControlLabel>Ingredients</ControlLabel>
+                        <ControlLabel style={{color: 'white'}}>Ingredients</ControlLabel>
                         <FormControl componentClass="textarea" placeholder="Ingredients" onChange={this.handleRecipeIngredients.bind(this)} />
                     </FormGroup>
                     <FormGroup controlId="formControlsTextarea">
-                        <ControlLabel>Instructions</ControlLabel>
+                        <ControlLabel style={{color: 'white'}}>Instructions</ControlLabel>
                         <FormControl componentClass="textarea" placeholder="Instructions" onChange={this.handleRecipeInstructions.bind(this)} />
                     </FormGroup>
                     {/* <button onClick={() =>  this.props.onAddRecipe({
@@ -86,11 +88,12 @@ class AddRecipe extends React.Component {
                         recipeInstructions: this.state.recipeInstructions,
                     })}>Save</button> */}
 
-                    <button>Submit</button>
+                    <button style={{borderRadius: '20px', backgroundColor: 'white', marginBottom: '25px'}}>Save Recipe</button>
 
-
+                    <br />
                     
                 </form>
+                </div>
         </div>
         )};
 }

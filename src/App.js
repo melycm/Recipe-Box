@@ -18,18 +18,30 @@ class App extends React.Component {
     return (
       <div className="imagefront">
         <NavigationBar />
-        <div className="container h-100">
-        <div className="row h-100 justify-content-center align-items-center">
+        <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+            <a style={{fontSize: '30px', color: 'white', marginRight: '15px', marginBottom: '10px'}} href="www.github.com/melycm" target="_blank" class="fa fa-github"></a><br />
+        </div>
+        <div style={{display: 'flex', justifyContent: 'flex-end', marginRight: '15px', marginBottom: '10px'}}>
+            <a style={{fontSize: '30px', float: 'right', color: 'white'}} href="www.github.com/melycm" target="_blank" class="fa fa-linkedin"></a><br />
+        </div>
+        <div style={{display: 'flex', justifyContent: 'flex-end', marginRight: '15px'}}>
+            {/* <div style={{float: 'right', marginTop: '30px', marginLeft: '128px'}}> */}
+            <a style={{writingMode: 'vertical-rl', color: 'white', fontSize: '20px'}} href="www.melissacantu.com" target="_blank">www.melissacantu.com</a>
+        </div>
+        {/* <div className="container h-100"> */}
+        {/* <div className="row h-100 justify-content-center align-items-center"> */}
           {/* <div className="mainBox">
               <h1 className="quote">"No one is born a great cook, one learns by doing."</h1>
           </div> */}
-          <div style={{float: 'right', width: '0px'}}>
-            <a style={{fontSize: '30px', float: 'right', color: 'white'}} href="www.github.com/melycm" target="_blank" class="fa fa-github"></a><br />
+          {/* <div style={{display: 'flex', justifyContent: 'flex-end', width: '0' }}>
+            <a style={{fontSize: '30px', color: 'white'}} href="www.github.com/melycm" target="_blank" class="fa fa-github"></a><br />
             <a style={{fontSize: '30px', float: 'right', color: 'white'}} href="www.github.com/melycm" target="_blank" class="fa fa-linkedin"></a><br />
+            <div style={{float: 'right', marginTop: '30px', marginLeft: '128px'}}>
             <a style={{writingMode: 'vertical-rl', color: 'white', fontSize: '20px'}} href="www.melissacantu.com" target="_blank">www.melissacantu.com</a>
-          </div>
-        </div>
-      </div>
+          </div> */}
+          {/* </div> */}
+        {/* </div> */}
+      {/* </div> */}
       </div>
     );
   }

@@ -54,22 +54,24 @@ class searchRecipe extends React.Component {
 
     
         return (
-            <div>
+            <div className="imagePages2">
                 <NavigationBar />
                 <br />
-                <input type="text"
+                <div style={{display: 'flex', justifyContent: 'center'}}>
+                <input type="text" style={{borderRadius: '5px', width: '40%', marginRight: '5px'}}
                 value={this.state.term}
                 placeholder="Search Recipe"
                 onChange={(this.onInputChange.bind(this))}                
                 />
 
-                <button
+                <button style={{borderRadius: '20px'}}
                 onClick={(this.getURL.bind(this))}>
                 
                 Search Recipe
                 </button>
+                </div>
                 <br />
-                <div>
+                <div style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
                     {myVideos[0]}
                     <br />
                     {myVideos[1]}

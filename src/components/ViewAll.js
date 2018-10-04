@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import addRecipe from '../actions/addRecipe'
 import {Grid, Button, Row, Col, Thumbnail, Modal, ButtonToolbar} from 'react-bootstrap';
 import deleteRecipe from '../actions/deleteRecipe'
+import uuid from 'uuid';
 
 
 class ViewAll extends React.Component {
@@ -16,8 +17,13 @@ class ViewAll extends React.Component {
         }
     }
 
-    handleShow() {
-        this.setState({ show: true });
+    handleShow(id) {
+
+        console.log("id: " + id);
+        this.setState({show: id})
+
+        // this.id.modal({show: true});
+        // this.setState({ show: true });
     }
     
     handleHide() {
@@ -26,7 +32,7 @@ class ViewAll extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="imagePages">
                 <NavigationBar />
                 
                 {/* {
@@ -39,33 +45,41 @@ class ViewAll extends React.Component {
                     </div>
                 })
             } */}
-
+                <div>
                 {
                     this.props.recipeList.map(recipeData => {
-                        return <div>
-                <Grid>
-                <Row>
-                    
-                    <Col xs={6} md={4}>
+                        return <div >
+                {/* <Grid>
+                <Row> */}
+                    {/* <Col md={1}></Col> */}
+                    <div>
+                    {/* <Row> */}
+                    <Col xs={6} md={3}>
                     <Thumbnail src={recipeData.recipePic} alt="242x200">
-                        <h3>{recipeData.recipeName}</h3>
-                        <ButtonToolbar>
-                        <Button bsStyle="primary" onClick={this.handleShow}>Show Recipe</Button>
-                        <Modal {...this.props} show={this.state.show} onHide={this.handleHide} dialogClassName="custom-modal" >
-                        <Modal.Body>
-                        <img src={recipeData.recipePic} width="30%"/> <br />
-                        <b>{recipeData.recipeName}</b> <br />
-                        {recipeData.recipeIngredients}<br />
-                        {recipeData.recipeInstructions}<br />
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button bsStyle="default" onClick={this.handleHide}>Close</Button>
-                        </Modal.Footer>
+                        <h3 style={{textAlign: 'center'}}>{recipeData.recipeName}</h3>
+                        <ButtonToolbar >
+                        <Button style={{backgroundColor: 'black', color: 'white'}} bsStyle="primary" onClick={this.handleShow.bind(this, recipeData.id)} data-target="#firstModal">Show Recipe</Button>
+
+                        <Modal {...this.props} show={this.state.show == recipeData.id} onHide={this.handleHide} dialogClassName="custom-modal" id={recipeData.id} >
+                            <Modal.Body>
+                            <div style={{textAlign: 'center'}}>
+                                <img src={recipeData.recipePic} width="40%"/> <br />
+                                <b>{recipeData.recipeName}</b> <br />
+                                <em>{recipeData.recipeIngredients}</em><br />
+                                {recipeData.recipeInstructions}<br />
+                                </div>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button bsStyle="default" onClick={this.handleHide}>Close</Button>
+                            </Modal.Footer>
                         </Modal>
+
                         </ButtonToolbar>
                             <Button bsStyle="default" onClick={() => {this.props.onDeleteRecipe(recipeData)}}>Delete Recipe</Button>
                     </Thumbnail>
                     </Col>
+                    {/* </Row> */}
+                    </div>
                     
                     {/* <Col xs={6} md={4}>
                     <Thumbnail src="/thumbnaildiv.png" alt="242x200">
@@ -85,11 +99,12 @@ class ViewAll extends React.Component {
                         </p>
                     </Thumbnail>
                     </Col> */}
-                </Row>
-                </Grid>
+                {/* </Row> */}
+                {/* </Grid> */}
                 </div>
                 })
                 }
+                </div>
             </div>
         );
     }

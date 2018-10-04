@@ -1,9 +1,39 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:700|Roboto:500);
 
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
 body {
+  background-image: url('https://images.wallpaperscraft.com/image/dark_spots_texture_background_50355_2558x1562.jpg');
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+.imagePages{
+  /* background-image: url('https://images.wallpaperscraft.com/image/dark_spots_texture_background_50355_2558x1562.jpg'); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* height: 100vh; */
+  width: 100%;
+  height: 100%;
+}
+
+.imagePages2{
+  background-image: url('https://images.wallpaperscraft.com/image/dark_spots_texture_background_50355_2558x1562.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* height: 100vh; */
+  width: 100%;
+  height: 100vh;
 }
 
 .App {
@@ -12,11 +42,11 @@ body {
 
 #formControlsTextarea{
   padding-bottom: 80px;
-  width: 50%;
+  width: 700px;
 }
 
 #formControlsName {
-  width: 50%;
+  width: 700px;
 }
 
 /* http://i.huffpost.com/gen/4819732/images/o-KITCHEN-COOKING-facebook.jpg */
@@ -80,6 +110,16 @@ Navbar {
   to { transform: rotate(360deg); }
 }
 
-form {
-  background-color: rgb(184, 179, 179);
+.formBack {
+  /* background-color: rgba(0, 0, 0, .2); */
+  margin: 0 auto;
+  width: 95%;
+  text-align: center;
+  align: center;
+}
+
+form{
+  margin: 0 auto;
+  display: inline-block;
+
 }

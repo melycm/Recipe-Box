@@ -69,7 +69,7 @@ class AddSecondRecipe extends React.Component {
         return (
           <ButtonToolbar>
             <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-            <Button style={{borderRadius: '100px'}} bsStyle="primary" onClick={this.handleShow}>
+            <Button style={{borderRadius: '100px', position: 'fixed', backgroundColor: 'white', color: 'black', bottom: '0px', marginBottom: '10px', marginRight: '10px'}} bsStyle="primary" onClick={this.handleShow}>
               Write Recipe
             </Button>
             </div>
